@@ -1,13 +1,11 @@
 package BTree;
 
-
 /**
  *
  * @author Grajalesmx
  */
 public class CNode<E extends Comparable<E>> {
 
-//private static clas CNode<E> {
     public int size;
     public E[] data;
     public CNode<E>[] child;

@@ -29,11 +29,11 @@ public class Main {
 //        }       
 
         CNode n1 = new CNode(NOrder);
-        for (int i = 0; i < EIn.length - 1; i++) {
+        for (int i = 0; i < EIn.length; i++) {
             element = EIn[i];
             n1.OInsertion(element);
         }
-        for (int i = 0; i < n1.data.length - 1; i++) {
+        for (int i = 0; i < n1.data.length; i++) {
             System.out.println(n1.data[i]);
         }
 
