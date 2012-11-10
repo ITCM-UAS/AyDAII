@@ -1,6 +1,5 @@
 package BTree;
 
-
 public class Main {
 
     /*
@@ -29,7 +28,6 @@ public class Main {
 //            System.out.println(EOut[i]);
 //        }       
 
-
         CNode n1 = new CNode(NOrder);
         for (int i = 0; i < EIn.length - 1; i++) {
             element = EIn[i];
@@ -39,12 +37,9 @@ public class Main {
             System.out.println(n1.data[i]);
         }
 
-        m=n1.data.length-1;
+        m = n1.data.length - 1;
         BSearch = CNode.BSearch(n1.data, search, 0, m);
         System.out.println("Posicion Hijo en :" + BSearch);
-
-
-
     }
 }
 //Adaptar "Busqueda Binaria" para que no regrese -1 si no se encuentra el 

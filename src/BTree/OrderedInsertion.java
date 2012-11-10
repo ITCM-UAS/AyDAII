@@ -1,6 +1,5 @@
 package BTree;
 
-
 public class OrderedInsertion {
 
     public static int[] OInsertion(int E[], int element, int m) {
