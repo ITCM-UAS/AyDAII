@@ -22,9 +22,7 @@ public class LCS {
         k = LCS.LCS(X, Y);
         
         System.out.println("");
-        System.out.println(k); //Imprime el numero de Coincidencias
-        
-        System.out.println(""+LCS.Backtrack(L,X,Y,X.length,Y.length));        
+        System.out.println(k); //Imprime el numero de Coincidencias      
     }
 
     public static int LCS(int[] X, int[] Y) {
@@ -58,27 +56,5 @@ public class LCS {
 
         return L[m][n]; // Regresa el valor ubicado al final de la matriz con el numero mayor de coincidencias
     }
-
-    public static int Backtrack(int[][] L, int[] X, int[] Y, int i, int j) {
-
-    if( i == 0 || j == 0){
-     }
-    else{ 
-        if (X[i]==(Y[j])){
-        return Backtrack(L, X, Y, i-1, j-1) + X[i];
-   }
-        else{
-     if (L[i,j-1] > L[i-1,j])
-             //(L[i,j-1] > L[i-1,j])
-     {
-           return Backtrack(L, X, Y, i, j-1);
-       }else{
-           return Backtrack(L, X, Y, i-1, j);   
-    }
-    }
-    }
-return 0;
-}
-
 
     }
