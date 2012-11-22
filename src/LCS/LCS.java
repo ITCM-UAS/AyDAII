@@ -22,7 +22,8 @@ public class LCS {
         k = LCS.LCS(X, Y);
         
         System.out.println("");
-        System.out.println(k); //Imprime el numero de Coincidencias      
+        System.out.println(k); //Imprime el numero de Coincidencias  
+        System.out.println("Prueba");
     }
 
     public static int LCS(int[] X, int[] Y) {
