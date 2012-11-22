@@ -28,7 +28,7 @@ public class Main {
 //            System.out.println(EOut[i]);
 //        }       
 
-        CNode n1 = new CNode(NOrder);
+        CNode n1 = new CNode(NOrder, null);
         for (int i = 0; i < EIn.length; i++) {
             element = EIn[i];
             n1.OInsertion(element);
