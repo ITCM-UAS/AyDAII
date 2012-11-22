@@ -6,26 +6,30 @@ package BTree;
  */
 public class CNode<E extends Comparable<E>> {
 
-    public int size;
-    public E[] data;
-    public CNode<E>[] child;
+    private int size;
+    private E[] data;
+    private CNode<E>[] child;
+    private CNode<E> parent;
 
-    public CNode(int order) {
-        data = (E[]) new Comparable[order];
-        child = (CNode<E>[]) new CNode[order];
-        size = 0;
+    public CNode(int order, CNode<E> parent) {
+        
+        this.data = (E[]) new Comparable[order];
+        this.child = (CNode<E>[]) new CNode[order];
+        this.size = 0;
+        this.parent = parent;
+        
     }
 
     public void OInsertion(E e) {
-        if (size < 5) {
-            int i = data.length - 1;
-            data[i] = e;
-            E tmp = data[i];
-            for (; i > 0 && (data[i - 1] == null || tmp.compareTo(data[i - 1]) < 0); i--) {
-                data[i] = data[i - 1];
+        if (getSize() < 5) {
+            int i = getData().length - 1;
+            getData()[i] = e;
+            E tmp = getData()[i];
+            for (; i > 0 && (getData()[i - 1] == null || tmp.compareTo(getData()[i - 1]) < 0); i--) {
+                getData()[i] = getData()[i - 1];
             }
-            data[i] = tmp;
-            size++;
+            getData()[i] = tmp;
+            setSize(getSize() + 1);
         }
     }
 
@@ -48,5 +52,77 @@ public class CNode<E extends Comparable<E>> {
                 return center;
             }
         }
+    }
+
+    /**
+     * @return the size
+     */
+    public int getSize() {
+        
+        return size;
+        
+    }
+
+    /**
+     * @param size the size to set
+     */
+    public void setSize(int size) {
+        
+        this.size = size;
+        
+    }
+
+    /**
+     * @return the data
+     */
+    public E[] getData() {
+        
+        return data;
+        
+    }
+
+    /**
+     * @param data the data to set
+     */
+    public void setData(E[] data) {
+        
+        this.data = data;
+        
+    }
+
+    /**
+     * @return the child
+     */
+    public CNode<E>[] getChild() {
+        
+        return child;
+        
+    }
+
+    /**
+     * @param child the child to set
+     */
+    public void setChild(CNode<E>[] child) {
+        
+        this.child = child;
+        
+    }
+
+    /**
+     * @return the parent
+     */
+    public CNode<E> getParent() {
+        
+        return parent;
+        
+    }
+
+    /**
+     * @param parent the parent to set
+     */
+    public void setParent(CNode<E> parent) {
+        
+        this.parent = parent;
+        
     }
 }

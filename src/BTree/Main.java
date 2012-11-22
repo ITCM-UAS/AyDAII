@@ -33,12 +33,12 @@ public class Main {
             element = EIn[i];
             n1.OInsertion(element);
         }
-        for (int i = 0; i < n1.data.length; i++) {
-            System.out.println(n1.data[i]);
+        for (int i = 0; i < n1.getData().length; i++) {
+            System.out.println(n1.getData()[i]);
         }
 
-        m = n1.data.length - 1;
-        BSearch = CNode.BSearch(n1.data, search, 0, m);
+        m = n1.getData().length - 1;
+        BSearch = CNode.BSearch(n1.getData(), search, 0, m);
         System.out.println("Posicion Hijo en :" + BSearch);
     }
 }
