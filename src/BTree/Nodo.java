@@ -6,6 +6,10 @@ package BTree;
  */
 public class Nodo<E> {
 
+    private int size = 0;
+    private E[] data;
+    private Nodo<E>[] child;
+
     //crea un nodo vacio
     @SuppressWarnings("unchecked")
     public Nodo(int order) {
@@ -70,12 +74,5 @@ public class Nodo<E> {
 
     }
     //numero de elementos en el nodo
-    private int size = 0;
-//la información
-    private E[] data;
-    /**
-     * Las ligas de los hijos child[i] se refieren a
-     * el sub árbol del hijo < data [i] for i < size y el sub arbol del hijo > data [size -1] for i==size
-     */
-    private Nodo<E>[] child;
+
 }
