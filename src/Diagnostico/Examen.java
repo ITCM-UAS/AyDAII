@@ -16,7 +16,7 @@ import java.util.Scanner;
 public class Examen {
 
     public static void main(String[] args) throws FileNotFoundException, IOException {
-        Scanner sc = new Scanner(new FileReader("in.txt"));
+        Scanner sc = new Scanner(new FileReader("src/Diagnostico/in.txt"));
         int n = sc.nextInt();
         int Matriz[][] = new int[n][n];
         for (int i = 0; i < n; i++) {

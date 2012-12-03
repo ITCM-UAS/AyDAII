@@ -1,46 +1,72 @@
 package Grafos;
 
+import Graph.*;
 import java.util.Iterator;
 import java.util.Deque;
 import java.util.ArrayDeque;
 
-/** Class to implement the depth-first search algorithm.
- *   @author Koffman and Wolfgang
- **/
 public class DepthFirstSearchNR {
 
-    // Data Fields
-    /** A reference to the graph being searched. */
     private Graph graph;
-    /** Array of parents in the depth-first search tree. */
     private int[] parent;
-    /** Flag to indicate whether this vertex has been visited. */
     private boolean[] visited;
-    /** The array that contains each vertex in discovery order. */
     private int[] discoveryOrder;
-    /** The array that contains each vertex in finish order. */
     private int[] finishOrder;
 
-    // Constructors
-// Insert solution to programming exercise 2, section 4, chapter 10 here
+    public DepthFirstSearchNR(Graph graph) {
+        Deque<Integer> previousVertex = new ArrayDeque<Integer>();
+        Deque<Iterator<Edge>> previousIterator =
+                new ArrayDeque<Iterator<Edge>>();
+        this.graph = graph;
+        int n = graph.getNumV();
+        parent = new int[n];
+        visited = new boolean[n];
+        discoveryOrder = new int[n];
+        finishOrder = new int[n];
+        int discoveryIndex = 0;
+        int finishIndex = 0;
+        for (int i = 0; i < n; i++) {
+            parent[i] = -1;
+            discoveryOrder[i] = -1;
+            finishOrder[i] = -1;
+            visited[i] = false;
+        }
+        for (int i = 0; i < n; i++) {
+            if (!visited[i]) {
+                previousVertex.push(i);
+                previousIterator.push(graph.edgeIterator(i));
+                discoveryOrder[discoveryIndex++] = i;
+                visited[i] = true;
+                while (!previousVertex.isEmpty()) {
+                    int currentVertex = previousVertex.peek();
+                    Iterator<Edge> currentIterator = previousIterator.peek();
+                    if (currentIterator.hasNext()) {
+                        int child = currentIterator.next().getDest();
+                        if (!visited[child]) {
+                            parent[child] = currentVertex;
+                            previousVertex.push(child);
+                            previousIterator.push(graph.edgeIterator(child));
+                            discoveryOrder[discoveryIndex++] = child;
+                            visited[child] = true;
+                        }
+                    } else {
+                        finishOrder[finishIndex++] = currentVertex;
+                        previousIterator.pop();
+                        previousVertex.pop();
+                    }
+                }
+            }
+        }
+    }
 
-    /** Get the finish order
-     *  @return finish order
-     */
     public int[] getFinishOrder() {
         return finishOrder;
     }
 
-    /** Get the discovery  order
-     *  @return discovery order
-     */
     public int[] getDiscoveryOrder() {
         return discoveryOrder;
     }
 
-    /** Get the parent
-     *  @return the parent
-     */
     public int[] getParent() {
         return parent;
     }
