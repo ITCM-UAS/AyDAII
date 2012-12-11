@@ -13,7 +13,7 @@ import java.util.Scanner;
  *
  * @author Grajalemx
  */
-public class Examen {
+public class Main {
 
     public static void main(String[] args) throws FileNotFoundException, IOException {
         Scanner sc = new Scanner(new FileReader("src/Diagnostico/in.txt"));

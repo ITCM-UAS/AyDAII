@@ -1,7 +1,4 @@
-/*<exercise chapter="10" section="2" type="programming" number="1">*/
 package Grafos;
-
-import Graph.*;
 
 public class Edge {
 
