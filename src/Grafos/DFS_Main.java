@@ -3,7 +3,7 @@ package Grafos;
 import java.io.FileReader;
 import java.util.Scanner;
 
-public class Main {
+public class DFS_Main {
 
     public static void main(String[] args) {
         Graph g = null;
@@ -22,7 +22,7 @@ public class Main {
         System.out.println("Discovery & Finish Order");
         
         for (int i =0; i< numVertices; i++) {
-            System.out.println(discoveryOrder[i] + " " + finishOrder[i]);
+            System.out.println(discoveryOrder[i] + " " + finishOrder[i]);    
         }
     }
 }

@@ -17,6 +17,7 @@ public class BreadthFirstSearch {
         theQueue.offer(start);
         while (!theQueue.isEmpty()) {
             int current = theQueue.remove();
+            System.out.println("Visitado: \n" +current);
             Iterator<Edge> itr = graph.edgeIterator(current);
             while (itr.hasNext()) {
                 Edge edge = itr.next();
@@ -24,6 +25,7 @@ public class BreadthFirstSearch {
                 if (!identified[neighbor]) {
                     identified[neighbor] = true;
                     theQueue.offer(neighbor);
+                    System.out.println("En Cola: \n"+neighbor);
                     parent[neighbor] = current;
                 }
             }

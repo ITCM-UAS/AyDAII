@@ -1,4 +1,5 @@
-import Graph.*;
+package Grafos;
+
 import java.util.HashSet;
 import java.util.Set;
 
